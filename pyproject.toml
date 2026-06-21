@@ -1,0 +1,15 @@
+[project]
+name = "markitdown-poc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "markitdown[docx,pdf,pptx,xlsx]>=0.1.6",
+    "ipykernel>=6.0.0",
+    "ollama>=0.3.0",
+    "openai>=1.0.0",
+]
+
+[tool.jupyter]
+kernelspec = { display_name = "Python 3", language = "python", name = "python3" }
