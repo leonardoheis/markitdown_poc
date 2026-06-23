@@ -9,7 +9,23 @@ dependencies = [
     "ipykernel>=6.0.0",
     "ollama>=0.3.0",
     "openai>=1.0.0",
+    "pypdfium2>=4.0.0",
+    "easyocr>=1.7.2",
+    "torch>=2.7.1",
+    "torchvision>=0.22.1",
 ]
+
+[tool.uv]
+dev-dependencies = ["pytest>=8.0.0"]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu118" }
+torchvision = { index = "pytorch-cu118" }
+
+[[tool.uv.index]]
+name = "pytorch-cu118"
+url = "https://download.pytorch.org/whl/cu118"
+explicit = true
 
 [tool.jupyter]
 kernelspec = { display_name = "Python 3", language = "python", name = "python3" }
