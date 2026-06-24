@@ -1,5 +1,5 @@
 import logging
-from typing import Callable, Literal
+from typing import Callable
 from markitdown import MarkItDown
 from openai import OpenAI
 import pypdfium2 as pdfium
@@ -15,7 +15,10 @@ _VISION_MODEL = "llava"
 def _get_page_count(file_path: str) -> int:
     if file_path.lower().endswith(".pdf"):
         pdf = pdfium.PdfDocument(file_path)
-        return len(pdf)
+        try:
+            return len(pdf)
+        finally:
+            pdf.close()
     return 1
 
 
