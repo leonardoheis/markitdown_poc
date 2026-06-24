@@ -1,3 +1,3 @@
-from .pipeline import ConversionPipeline
+from .pipeline import RobustConversionPipeline
 
-__all__ = ["ConversionPipeline"]
+__all__ = ["RobustConversionPipeline"]
